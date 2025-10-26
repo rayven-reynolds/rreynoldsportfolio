@@ -1,15 +1,11 @@
 backend:
-  name: github
-  repo: rayven-reynolds/portfolioofwork
+  name: git-gateway
   branch: main
-  auth_scope: repo
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-site_url: "https://rayven-reynolds.github.io/portfolioofwork"
+site_url: "https://rayvenreynoldsportfolio.netlify.app"
 
 collections:
   - name: "content"
@@ -25,3 +21,4 @@ collections:
           - { label: "Projects Section", name: "projects", widget: "markdown" }
           - { label: "Awards Section", name: "awards", widget: "markdown" }
           - { label: "Contact Info", name: "contact", widget: "markdown" }
+
