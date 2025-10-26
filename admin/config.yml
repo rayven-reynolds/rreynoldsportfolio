@@ -10,6 +10,8 @@ site_url: "https://rayvenreynoldsportfolio.netlify.app"
 collections:
   - name: "content"
     label: "Website Content"
+    editor:
+      preview: false
     files:
       - file: "index.html"
         label: "Main Page"
@@ -21,4 +23,5 @@ collections:
           - { label: "Projects Section", name: "projects", widget: "markdown" }
           - { label: "Awards Section", name: "awards", widget: "markdown" }
           - { label: "Contact Info", name: "contact", widget: "markdown" }
+
 
