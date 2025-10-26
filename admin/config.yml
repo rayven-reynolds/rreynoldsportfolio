@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: rayven-reynolds/portfolioofwork
+  branch: main
+  auth_scope: repo
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: "https://rayven-reynolds.github.io/portfolioofwork"
+
+collections:
+  - name: "content"
+    label: "Website Content"
+    files:
+      - file: "index.html"
+        label: "Main Page"
+        name: "main"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "About Section", name: "about", widget: "markdown" }
+          - { label: "Projects Section", name: "projects", widget: "markdown" }
+          - { label: "Awards Section", name: "awards", widget: "markdown" }
+          - { label: "Contact Info", name: "contact", widget: "markdown" }
