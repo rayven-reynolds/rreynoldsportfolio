@@ -27,18 +27,16 @@
   </script>
    <!-- ✅ Custom Styles -->
   <style>
-    html, body { scroll-behavior: smooth; }
-    .shadow-soft { box-shadow: 0 6px 20px rgba(0,0,0,.06); }
+  html, body { scroll-behavior: smooth; }
+  .shadow-soft { box-shadow: 0 6px 20px rgba(0,0,0,.06); }
 
-    /* Fix bullet alignment */
- ul.list-disc {
-  list-style-type: disc;
-  list-style-position: outside;
-  margin-left: 1.5rem;   /* creates space for the bullet */
-  padding-left: 0;       /* remove Tailwind default padding */
-  text-indent: -0.6rem;  /* aligns wrapped lines with text */
-}
-  </style>
+  /* Fix bullet alignment */
+  ul.list-disc {
+    list-style-position: outside;
+    padding-left: 1.25rem;
+    text-indent: -1.25rem;
+  }
+</style>
 <!-- Lucide icons (works with GitHub Pages / no build setup) -->
 <script src="https://unpkg.com/lucide@latest"></script>
   <style>
