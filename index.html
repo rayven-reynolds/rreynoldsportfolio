@@ -42,7 +42,7 @@
       hero: {
         titleLead: "Program Leader turning",
         titleAccent: "ambiguity into action",
-        tagline: "I provide structure without limiting flexibility, turning ideas into reality through growth and iteration.",
+        tagline: "Providing structure without limiting flexibility and turning ideas into reality through growth and iteration.",
         stats: [
           { label: "Years Experience", value: "12+" },
           { label: "Scalable Systems Built", value: "5+" },
@@ -139,7 +139,7 @@
 },
      testimonials: {
   title: "Testimonials",
-  subtitle: "What partners say",
+  subtitle: "What teammates and colleagues have to say about me",
   quotes: [
     {
       person: "Director, Marketing",
@@ -270,7 +270,7 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
   <section id="testimonials" class="max-w-6xl mx-auto px-4 py-12">
     <div class="mb-6">
       <div class="flex items-center gap-3">
-        <div class="p-2 rounded-2xl bg-violet-100"><i data-lucide="message-square" class="w-5 h-5 text-violet-600"></i></div>
+        <div class="p-2 rounded-2xl bg-violet-600/100"><i data-lucide="message-square" class="w-5 h-5 text-violet-600"></i></div>
         <h2 id="test-title" class="text-2xl md:text-3xl font-bold">Testimonials</h2>
       </div>
       <p id="test-sub" class="text-zinc-600 mt-1"></p>
@@ -293,7 +293,7 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
   <div class="rounded-3xl bg-white border border-zinc-200 p-6 shadow-soft flex flex-col md:flex-row items-center justify-between gap-4">
     <div>
       <p id="contact-blurb" class="text-zinc-700">
-        Open to Program Delivery, PMO Leadership, and Design-to-Build roles.
+        Let's Build Together!
       </p>
     </div>
 
@@ -409,12 +409,18 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
     });
 
     // Contact
-    document.getElementById('contact-title').textContent = s.contact.title;
-    document.getElementById('contact-sub').textContent = s.contact.subtitle;
-    document.getElementById('contact-blurb').textContent = s.contact.blurb;
-    document.getElementById('btn-email').href = s.contact.email;
-    document.getElementById('btn-linkedin').href = s.contact.linkedin;
-    document.getElementById('btn-resume').href = s.contact.resume;
+    // Contact
+document.getElementById('contact-title').textContent = s.contact.title;
+document.getElementById('contact-sub').textContent = s.contact.subtitle;
+document.getElementById('contact-blurb').textContent = s.contact.blurb;
+
+// Use items[] to populate buttons
+const emailItem = s.contact.items?.find(i => i.icon === "mail");
+const liItem    = s.contact.items?.find(i => i.icon === "linkedin");
+
+if (emailItem)  document.getElementById('btn-email').href    = emailItem.link;
+if (liItem)     document.getElementById('btn-linkedin').href = liItem.link;
+
 
     // Footer
     document.getElementById('footer').textContent = s.footer;
