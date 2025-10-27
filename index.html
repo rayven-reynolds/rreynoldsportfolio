@@ -25,10 +25,11 @@
     }
   </script>
   <!-- Lucide icons -->
-  <script type="module">
-    import { createIcons, ArrowRight, Trophy, Star, MessageSquare, Rocket, Briefcase, Mail, Linkedin, FileText } from "https://unpkg.com/lucide@latest/dist/esm/lucide.js";
-    window.lucideReady = () => createIcons({ icons: { ArrowRight, Trophy, Star, MessageSquare, Rocket, Briefcase, Mail, Linkedin, FileText }});
-  </script>
+<script type="module">
+  import { createIcons, ArrowRight, Trophy, Star, MessageSquare, Rocket, Briefcase, Mail, Linkedin, FileText } 
+  from "https://unpkg.com/lucide@latest/dist/esm/lucide.js";
+  window.lucideReady = () => createIcons({ icons: { ArrowRight, Trophy, Star, MessageSquare, Rocket, Briefcase, Mail, Linkedin, FileText }});
+</script>
   <style>
     html, body { scroll-behavior: smooth; }
     .shadow-soft { box-shadow: 0 6px 20px rgba(0,0,0,.06); }
@@ -270,7 +271,7 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
   <section id="testimonials" class="max-w-6xl mx-auto px-4 py-12">
     <div class="mb-6">
       <div class="flex items-center gap-3">
-        <div class="p-2 rounded-2xl bg-violet-600/100"><i data-lucide="message-square" class="w-5 h-5 text-violet-600"></i></div>
+        <div class="p-2 rounded-2xl bg-violet-100"><i data-lucide="message-square" class="w-5 h-5 text-violet-600"></i></div>
         <h2 id="test-title" class="text-2xl md:text-3xl font-bold">Testimonials</h2>
       </div>
       <p id="test-sub" class="text-zinc-600 mt-1"></p>
@@ -301,8 +302,8 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
       <!-- Email -->
       <a id="btn-email"
         href="mailto:rayven.reynolds@gmail.com"
-        class="inline-flex items-center gap-2 rounded-2xl bg-violet-600 px-5 py-2 text-white shadow-soft hover:bg-violet-700 transition">
-        <i data-lucide="mail" class="w-5 h-5"></i>
+        class="inline-flex items-center gap-2 rounded-2xl border-zinc-300 px-5 py-2 text-zinc-800 hover:bg-zinc-100 transition">
+        <i data-lucide="mail" class="w-5 h-5 text-violet-600"></i>
         <span>Email</span>
       </a>
 
@@ -426,7 +427,11 @@ if (liItem)     document.getElementById('btn-linkedin').href = liItem.link;
     document.getElementById('footer').textContent = s.footer;
 
     // Initialize icons
-    window.lucideReady && window.lucideReady();
+   // Initialize icons (scan and replace all [data-lucide] elements)
+if (window.lucide && typeof lucide.createIcons === 'function') {
+  lucide.createIcons();
+}
+
   </script>
 </body>
 </html>
