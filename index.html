@@ -31,10 +31,12 @@
     .shadow-soft { box-shadow: 0 6px 20px rgba(0,0,0,.06); }
 
     /* Fix bullet alignment */
-  ul.list-disc {
+ ul.list-disc {
+  list-style-type: disc;
   list-style-position: outside;
-  padding-left: 1.25rem;  /* tighter bullet spacing */
-  text-indent: -1.25rem;  /* shifts wrapped lines to align with text */
+  margin-left: 1.5rem;   /* creates space for the bullet */
+  padding-left: 0;       /* remove Tailwind default padding */
+  text-indent: -0.6rem;  /* aligns wrapped lines with text */
 }
   </style>
 <!-- Lucide icons (works with GitHub Pages / no build setup) -->
