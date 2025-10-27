@@ -32,13 +32,6 @@
      /* Bullet alignment safety rule */
   ul.list-disc { list-style-position: outside; }
 </style>
-<!-- Lucide icons (works with GitHub Pages / no build setup) -->
-<script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    html, body { scroll-behavior: smooth; }
-    .shadow-soft { box-shadow: 0 6px 20px rgba(0,0,0,.06); }
-    
-  </style>
 </head>
 <body class="min-h-screen bg-gradient-to-b from-white to-zinc-50 text-zinc-900 antialiased">
   <!-- ===== CONTENT JSON (edit your copy here, no code needed) ===== -->
@@ -454,10 +447,15 @@ if (liItem)     document.getElementById('btn-linkedin').href = liItem.link;
     document.getElementById('footer').textContent = s.footer;
 
     // Initialize icons
-   // Initialize icons (scan and replace all [data-lucide] elements)
-if (window.lucide && typeof lucide.createIcons === 'function') {
-  lucide.createIcons();
-}
+   // Make sure Lucide script is loaded before running createIcons()
+</script>
+
+<!-- ✅ Add this block below your render script -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  if (window.lucide && typeof lucide.createIcons === 'function') {
+    lucide.createIcons();
+  }
 
   </script>
 </body>
