@@ -29,19 +29,15 @@
   <style>
   html, body { scroll-behavior: smooth; }
   .shadow-soft { box-shadow: 0 6px 20px rgba(0,0,0,.06); }
-
-  /* Fix bullet alignment */
-  ul.list-disc {
-    list-style-position: outside;
-    padding-left: 1.25rem;
-    text-indent: -1.25rem;
-  }
+     /* Bullet alignment safety rule */
+  ul.list-disc { list-style-position: outside; }
 </style>
 <!-- Lucide icons (works with GitHub Pages / no build setup) -->
 <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     html, body { scroll-behavior: smooth; }
     .shadow-soft { box-shadow: 0 6px 20px rgba(0,0,0,.06); }
+    
   </style>
 </head>
 <body class="min-h-screen bg-gradient-to-b from-white to-zinc-50 text-zinc-900 antialiased">
@@ -50,8 +46,8 @@
     window.SITE = {
       brand: { name: "Rayven Reynolds, PMP" },
       hero: {
-        titleLead: "Program Leader, turning",
-        titleAccent: "ambiguity into action",
+        titleLead: "Award Winning Program Leader",
+        titleAccent: "turning ambiguity into action",
         tagline: "Leading programs with structure and clarity, turning ideas into impact through execution and iteration",
         stats: [
           { label: "Scalable Systems Built", value: "5+" },
@@ -199,8 +195,8 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
 
   <!-- ===== Header ===== -->
  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-zinc-200">
-  <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
-    <div class="flex items-center gap-3">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-4 md:gap-8 flex-wrap">
+    <div class="flex items-center gap-4 sm:gap-5">
       <img
   src="https://raw.githubusercontent.com/rayven-reynolds/rreynoldsportfolio/main/headshot.png"
   alt="Rayven Reynolds headshot"
@@ -258,12 +254,12 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
       <div class="rounded-3xl bg-white border border-zinc-200 p-6 shadow-soft">
         <h3 id="what-title" class="font-semibold text-lg">What I Do</h3>
         <p id="what-body" class="mt-2 text-zinc-700"></p>
-        <ul id="what-list" class="mt-4 space-y-2 text-zinc-700 list-disc list-inside"></ul>
+        <ul id="what-list" class="mt-4 space-y-2 text-zinc-700 list-disc pl-6"></ul>
       </div>
       <div class="rounded-3xl bg-white border border-zinc-200 p-6 shadow-soft">
         <h3 id="beyond-title" class="font-semibold text-lg">Beyond Work</h3>
         <p id="beyond-body" class="mt-2 text-zinc-700"></p>
-        <ul id="beyond-list" class="mt-4 space-y-2 text-zinc-700 list-disc list-inside"></ul>
+        <ul id="beyond-list" class="mt-4 space-y-2 text-zinc-700 list-disc pl-6"></ul>
 </div>
       </div>
   </section>
@@ -401,7 +397,7 @@ s.about.beyondWorkList.forEach(item => {
         const box = document.createElement('div');
         let inner = `<h4 class="font-semibold">${sec.h}</h4>`;
         if (sec.body) inner += `<p class="text-zinc-700">${sec.body}</p>`;
-        if (sec.list) inner += `<ul class="list-disc list-inside text-zinc-700 space-y-1">${sec.list.map(li=>`<li>${li}</li>`).join("")}</ul>`;
+        if (sec.list) inner += `<ul class="list-disc pl-6 text-zinc-700 space-y-1">${sec.list.map(li=>`<li>${li}</li>`).join("")}</ul>`;
         box.innerHTML = inner; body.appendChild(box);
       });
       wrap.appendChild(header); wrap.appendChild(body); pc.appendChild(wrap);
