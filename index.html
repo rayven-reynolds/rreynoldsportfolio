@@ -37,7 +37,7 @@
     window.SITE = {
       brand: { name: "Rayven Reynolds, PMP" },
       hero: {
-        titleLead: "Program Leader turning",
+        titleLead: "Program Leader, turning",
         titleAccent: "ambiguity into action",
         tagline: "Providing structure without limiting flexibility, and turning ideas into reality through growth and iteration.",
         stats: [
@@ -241,6 +241,7 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
         <h3 id="beyond-title" class="font-semibold text-lg">Beyond Work</h3>
         <p id="beyond-body" class="mt-2 text-zinc-700"></p>
         <ul id="beyond-list" class="mt-4 space-y-2 text-zinc-700 list-disc list-inside"></ul>
+</div>
       </div>
     </div>
   </section>
@@ -356,6 +357,12 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
     });
     document.getElementById('beyond-title').textContent = s.about.beyondWorkTitle;
     document.getElementById('beyond-body').textContent = s.about.beyondWork;
+    const beyondList = document.getElementById('beyond-list');
+s.about.beyondWorkList.forEach(item => {
+  const li = document.createElement('li');
+  li.textContent = item;
+  beyondList.appendChild(li);
+});
 
     // Projects
     document.getElementById('projects-title').textContent = s.projects.title;
