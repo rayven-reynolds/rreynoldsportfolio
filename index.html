@@ -155,24 +155,27 @@
     }
   ]
 },
-      contact: {
+         contact: {
   title: "Contact",
   subtitle: "Let’s build clarity together",
   blurb: "Open to Program Delivery, PMO Leadership, and Design-to-Build roles.",
   items: [
     {
-      icon: "mail", // email icon
+      icon: "mail",
       label: "rayven.reynolds@gmail.com",
       link: "mailto:rayven.reynolds@gmail.com"
     },
     {
-      icon: "linkedin", // LinkedIn logo
+      icon: "linkedin",
       label: "linkedin.com/in/rayvenreynolds",
       link: "https://www.linkedin.com/in/rayvenreynolds/"
     }
   ]
 },
 footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader"
+    };
+  </script>
+
 
   <!-- ===== Header ===== -->
   <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-zinc-200">
@@ -275,7 +278,7 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
     <div id="test-quotes" class="grid md:grid-cols-2 gap-6"></div>
   </section>
 
-  <!-- ===== Contact ===== -->
+ <!-- ===== Contact ===== -->
 <section id="contact" class="max-w-6xl mx-auto px-4 py-12">
   <div class="mb-6">
     <div class="flex items-center gap-3">
@@ -296,19 +299,25 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
 
     <div class="flex gap-3">
       <!-- Email -->
-      <a href="mailto:rayven.reynolds@gmail.com" class="inline-flex items-center gap-2 rounded-2xl bg-violet-600 px-4 py-2 text-white shadow-soft hover:bg-violet-700 transition">
-        <i data-lucide="mail" class="w-4 h-4"></i>
+      <a id="btn-email"
+        href="mailto:rayven.reynolds@gmail.com"
+        class="inline-flex items-center gap-2 rounded-2xl bg-violet-600 px-5 py-2 text-white shadow-soft hover:bg-violet-700 transition">
+        <i data-lucide="mail" class="w-5 h-5"></i>
         <span>Email</span>
       </a>
 
       <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/rayvenreynolds/" target="_blank" class="inline-flex items-center gap-2 rounded-2xl border border-zinc-300 px-4 py-2 text-zinc-800 hover:bg-zinc-100 transition">
-        <i data-lucide="linkedin" class="w-4 h-4"></i>
+      <a id="btn-linkedin"
+        href="https://www.linkedin.com/in/rayvenreynolds/"
+        target="_blank"
+        class="inline-flex items-center gap-2 rounded-2xl border border-zinc-300 px-5 py-2 text-zinc-800 hover:bg-zinc-100 transition">
+        <i data-lucide="linkedin" class="w-5 h-5 text-violet-600"></i>
         <span>LinkedIn</span>
       </a>
     </div>
   </div>
 </section>
+
 
   <footer id="footer" class="py-8 text-center text-sm text-zinc-500"></footer>
 
