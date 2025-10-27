@@ -24,12 +24,8 @@
       }
     }
   </script>
-  <!-- Lucide icons -->
-<script type="module">
-  import { createIcons, ArrowRight, Trophy, Star, MessageSquare, Rocket, Briefcase, Mail, Linkedin, FileText } 
-  from "https://unpkg.com/lucide@latest/dist/esm/lucide.js";
-  window.lucideReady = () => createIcons({ icons: { ArrowRight, Trophy, Star, MessageSquare, Rocket, Briefcase, Mail, Linkedin, FileText }});
-</script>
+<!-- Lucide icons (works with GitHub Pages / no build setup) -->
+<script src="https://unpkg.com/lucide@latest"></script>
   <style>
     html, body { scroll-behavior: smooth; }
     .shadow-soft { box-shadow: 0 6px 20px rgba(0,0,0,.06); }
@@ -159,7 +155,7 @@
          contact: {
   title: "Contact",
   subtitle: "Let’s build clarity together",
-  blurb: "Open to Program Delivery, PMO Leadership, and Design-to-Build roles.",
+  blurb: "Let's Start Building today!",
   items: [
     {
       icon: "mail",
@@ -294,27 +290,27 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
   <div class="rounded-3xl bg-white border border-zinc-200 p-6 shadow-soft flex flex-col md:flex-row items-center justify-between gap-4">
     <div>
       <p id="contact-blurb" class="text-zinc-700">
-        Let's Build Together!
+        Let's Start Building today!r!
       </p>
     </div>
 
     <div class="flex gap-3">
       <!-- Email -->
-      <a id="btn-email"
-        href="mailto:rayven.reynolds@gmail.com"
-        class="inline-flex items-center gap-2 rounded-2xl border-zinc-300 px-5 py-2 text-zinc-800 hover:bg-zinc-100 transition">
-        <i data-lucide="mail" class="w-5 h-5 text-violet-600"></i>
-        <span>Email</span>
-      </a>
+<a id="btn-email"
+   href="mailto:rayven.reynolds@gmail.com"
+   class="inline-flex items-center gap-2 rounded-full border border-violet-600 px-5 py-2 text-violet-600 bg-white hover:bg-violet-50 transition shadow-soft">
+  <i data-lucide="mail" class="w-4 h-4"></i>
+  <span>Email</span>
+</a>
 
-      <!-- LinkedIn -->
-      <a id="btn-linkedin"
-        href="https://www.linkedin.com/in/rayvenreynolds/"
-        target="_blank"
-        class="inline-flex items-center gap-2 rounded-2xl border border-zinc-300 px-5 py-2 text-zinc-800 hover:bg-zinc-100 transition">
-        <i data-lucide="linkedin" class="w-5 h-5 text-violet-600"></i>
-        <span>LinkedIn</span>
-      </a>
+<!-- LinkedIn -->
+<a id="btn-linkedin"
+   href="https://www.linkedin.com/in/rayvenreynolds/"
+   target="_blank"
+   class="inline-flex items-center gap-2 rounded-full border border-violet-600 px-5 py-2 text-violet-600 bg-white hover:bg-violet-50 transition shadow-soft">
+  <i data-lucide="linkedin" class="w-4 h-4"></i>
+  <span>LinkedIn</span>
+</a>
     </div>
   </div>
 </section>
