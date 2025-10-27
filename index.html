@@ -24,6 +24,18 @@
       }
     }
   </script>
+   <!-- ✅ Custom Styles -->
+  <style>
+    html, body { scroll-behavior: smooth; }
+    .shadow-soft { box-shadow: 0 6px 20px rgba(0,0,0,.06); }
+
+    /* Fix bullet alignment */
+    ul.list-disc {
+      list-style-position: outside;
+      padding-left: 1.5rem; /* adds space for bullets */
+      text-indent: -0.5rem; /* aligns wrapped lines with text */
+    }
+  </style>
 <!-- Lucide icons (works with GitHub Pages / no build setup) -->
 <script src="https://unpkg.com/lucide@latest"></script>
   <style>
@@ -50,7 +62,7 @@
         ctaSecondary: { label: "Get in touch", href: "#contact" }
       },
       about: {
-        title: "About",
+        title: "About Me — Rayven Reynolds, PMP",
         subtitle: "People × Process × Product",
         whatIDoTitle: "What I Do📈",
         whatIDo: "I build scalable systems, repeatable processes, and detailed project plans to turn strategy into execution — helping teams move seamlessly from idea to launch to iteration, while ensuring alignment with business goals and measurable outcomes.",
@@ -186,7 +198,7 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
 
   <!-- ===== Header ===== -->
  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-zinc-200">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
     <div class="flex items-center gap-3">
       <img
   src="https://raw.githubusercontent.com/rayven-reynolds/rreynoldsportfolio/main/headshot.png"
@@ -194,7 +206,7 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
   class="w-10 h-10 rounded-full object-cover ring-2 ring-violet-600 shadow-soft"
   loading="lazy"
 />
-        <span id="brand" class="font-semibold">Rayven Reynolds, PMP</span>
+        <span id="brand" class="font-semibold">Ray Reynolds, PMP</span>
       </div>
       <nav class="flex items-center gap-1 text-sm">
         <a href="#about" class="px-3 py-2 rounded-xl hover:bg-zinc-100">About</a>
