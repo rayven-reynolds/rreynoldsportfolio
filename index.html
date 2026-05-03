@@ -43,8 +43,8 @@
         titleAccent: "I lead PMOs that transform organizations",
         tagline: "Hi, I'm Ray, a Program Management leader who has built a PMO from the ground up and brings 10+ years of experience taking leadership's biggest, boldest ideas and transforming them into executable plans that come to life even when the path forward isn't so clear.",
         stats: [
-          { label: "New Revenue Stream Created", value: "$1M+" },
-          { label: "Reversed Partner Churn to Product Adoption ", value: "80% → 111%" },
+          { label: "New Revenue Stream and GTM Selling Motion", value: "$1M+" },
+          { label: "Reversed Product Churn to Product Adoption ", value: "80% → 111%" },
           { label: "Faster Time-to-Launch", value: "30%" },
           { label: "PMO Team Satisfaction Score", value: "95%" }
         ],
@@ -54,14 +54,14 @@
       about: {
         title: "About Me",
         subtitle: "Strategy x Alignment x Execution",
-        whatIDoTitle: "How I Lead🤝",
+        whatIDoTitle: "How I Lead 🤝",
         whatIDo: "I build the operational infrastructure that turns a company's top priorities into coordinated, measurable execution plans across cross-functional teams. My role is to create clarity where there isn't any, de-risk initiatives before they escalate, and hold teams accountable to the plan.",
         whatIDoList: [
-          "I align without authority: I drive accountability across cross-functional teams by building trust, lending credibility, and establishing clear communication and expectation plans from day one",
+          "I have influence without authority: I drive accountability across cross-functional teams by building trust, lending credibility, and establishing clear communication and expectation plans from day one",
           "I build systems, not just plans: Every program I lead follows a repeatable governance framework and decision-making model that the organization can adopt and scale beyond my involvement",
           "I use speed to our advantage: I surface tradeoffs before they become surprises and challenge timelines when I know the team can move faster",
         ],
-        beyondWorkTitle: "My Impact as a PMO Leader📈",
+        beyondWorkTitle: "My Impact as a PMO Leader 📈",
         beyondWork: "I am a builder and a leader. I build relationships and credibility, establish organizational trust, and create the infrastructure and operational foundations that extend beyond myself and scale across the business.",
         beyondWorkList: [
           "I build PMOs that scale: At Apartment List, I built the PMO from the ground up, establishing governance frameworks including templatized Charters, RACIs, Project Planning Boards, and decision-making protocols adopted across the organization. I scaled PMO discipline across 13+  teams with a team of two, and mentored 5 cross-functional leaders to manage projects within their own teams",
@@ -364,8 +364,11 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
     document.getElementById('what-body').textContent = s.about.whatIDo;
     const list = document.getElementById('what-list');
     s.about.whatIDoList.forEach(item => {
-      const li = document.createElement('li'); li.textContent = item; list.appendChild(li);
-    });
+  const li = document.createElement('li');
+  const parts = item.split(': ');
+  li.innerHTML = `<strong>${parts[0]}:</strong> ${parts.slice(1).join(': ')}`;
+  list.appendChild(li);
+});
     document.getElementById('beyond-title').textContent = s.about.beyondWorkTitle;
     document.getElementById('beyond-body').textContent = s.about.beyondWork;
     const beyondList = document.getElementById('beyond-list');
@@ -374,6 +377,17 @@ s.about.beyondWorkList.forEach(item => {
   li.textContent = item;
   beyondList.appendChild(li);
 });
+Replace it with:
+
+javascript
+s.about.beyondWorkList.forEach(item => {
+  const li = document.createElement('li');
+  const parts = item.split(': ');
+  li.innerHTML = `<strong>${parts[0]}:</strong> ${parts.slice(1).join(': ')}`;
+  beyondList.appendChild(li);
+});
+This works because your bullets all use the same pattern of "Label: description" separated by a colon. The code splits on the first colon, bolds everything before it, and keeps the rest normal. No changes needed to your SITE data at all.
+
 
     // Projects
     document.getElementById('projects-title').textContent = s.projects.title;
