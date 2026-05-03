@@ -374,20 +374,10 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
     const beyondList = document.getElementById('beyond-list');
 s.about.beyondWorkList.forEach(item => {
   const li = document.createElement('li');
-  li.textContent = item;
-  beyondList.appendChild(li);
-});
-Replace it with:
-
-javascript
-s.about.beyondWorkList.forEach(item => {
-  const li = document.createElement('li');
   const parts = item.split(': ');
   li.innerHTML = `<strong>${parts[0]}:</strong> ${parts.slice(1).join(': ')}`;
   beyondList.appendChild(li);
 });
-This works because your bullets all use the same pattern of "Label: description" separated by a colon. The code splits on the first colon, bolds everything before it, and keeps the rest normal. No changes needed to your SITE data at all.
-
 
     // Projects
     document.getElementById('projects-title').textContent = s.projects.title;
