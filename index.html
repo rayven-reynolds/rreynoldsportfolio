@@ -296,7 +296,7 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
       </div>
       <p id="awards-sub" class="text-zinc-600 mt-1"></p>
     </div>
-    <div id="award-items" class="grid md:grid-cols-2 gap-6"></div>
+   <div id="award-items"></div>
   </section>
 
   <!-- ===== Testimonials ===== -->
@@ -503,21 +503,81 @@ function buildCarousel() {
 buildCarousel();
 
     // Awards
-    document.getElementById('awards-title').textContent = s.awards.title;
-    document.getElementById('awards-sub').textContent = s.awards.subtitle;
-    const awards = document.getElementById('award-items');
-    s.awards.items.forEach(a => {
-      const card = document.createElement('div');
-      card.className = "rounded-3xl border border-zinc-200 bg-white shadow-soft overflow-hidden";
-      card.innerHTML = `
-        <div class="p-5 bg-amber-100/70 border-b border-zinc-200 flex items-center gap-2">
-          <i data-lucide="trophy" class="w-4 h-4 text-amber-600"></i>
-          <h3 class="font-semibold">${a.title}</h3>
-        </div>
-        <div class="p-6 text-zinc-800">${a.body}</div>
-        <div class="px-6 pb-6 text-sm text-zinc-500">${a.footer}</div>`;
-      awards.appendChild(card);
+   // Awards
+document.getElementById('awards-title').textContent = s.awards.title;
+document.getElementById('awards-sub').textContent = s.awards.subtitle;
+const awardsEl = document.getElementById('award-items');
+let currentAward = 0;
+
+function buildAwardCarousel() {
+  awardsEl.innerHTML = '';
+  const slideWrapper = document.createElement('div');
+  slideWrapper.style.cssText = 'overflow: hidden; width: 100%;';
+  const slideTrack = document.createElement('div');
+  slideTrack.id = 'award-track';
+  slideTrack.style.cssText = 'display: flex; transition: transform 0.4s ease; margin: 0 -12px;';
+
+  s.awards.items.forEach(a => {
+    const slide = document.createElement('div');
+    slide.style.cssText = 'min-width: 50%; box-sizing: border-box; padding: 0 12px;';
+    const card = document.createElement('div');
+    card.className = 'rounded-3xl border border-zinc-200 bg-white shadow-soft overflow-hidden h-full';
+    card.innerHTML = `
+      <div class="p-5 bg-amber-100/70 border-b border-zinc-200 flex items-center gap-2">
+        <i data-lucide="trophy" class="w-4 h-4 text-amber-600"></i>
+        <h3 class="font-semibold">${a.title}</h3>
+      </div>
+      <div class="p-6 text-zinc-800 italic">${a.body}</div>
+      <div class="px-6 pb-6 text-sm text-zinc-500 font-medium">${a.footer}</div>`;
+    slide.appendChild(card);
+    slideTrack.appendChild(slide);
+  });
+
+  slideWrapper.appendChild(slideTrack);
+  awardsEl.appendChild(slideWrapper);
+
+  const nav = document.createElement('div');
+  nav.className = 'flex items-center justify-between mt-6';
+
+  const prevBtn = document.createElement('button');
+  prevBtn.className = 'inline-flex items-center gap-2 rounded-2xl border border-zinc-300 px-4 py-2 text-zinc-800 hover:bg-zinc-100 disabled:opacity-30';
+  prevBtn.innerHTML = '<i data-lucide="arrow-left" class="w-4 h-4"></i> Previous';
+  prevBtn.disabled = true;
+  prevBtn.onclick = () => { if (currentAward > 0) { currentAward--; updateAward(); } };
+
+  const dots = document.createElement('div');
+  dots.className = 'flex gap-2 items-center';
+  s.awards.items.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = `rounded-full transition-all ${i === 0 ? 'bg-amber-500 w-6 h-2.5' : 'w-2.5 h-2.5 bg-zinc-300'}`;
+    dot.id = `award-dot-${i}`;
+    dot.onclick = () => { currentAward = i; updateAward(); };
+    dots.appendChild(dot);
+  });
+
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'inline-flex items-center gap-2 rounded-2xl border border-zinc-300 px-4 py-2 text-zinc-800 hover:bg-zinc-100 disabled:opacity-30';
+  nextBtn.innerHTML = 'Next <i data-lucide="arrow-right" class="w-4 h-4"></i>';
+  nextBtn.onclick = () => { if (currentAward < s.awards.items.length - 1) { currentAward++; updateAward(); } };
+
+  function updateAward() {
+    slideTrack.style.transform = `translateX(-${currentAward * 50}%)`;
+    prevBtn.disabled = currentAward === 0;
+    nextBtn.disabled = currentAward === s.awards.items.length - 1;
+    s.awards.items.forEach((_, i) => {
+      const dot = document.getElementById(`award-dot-${i}`);
+      dot.className = `rounded-full transition-all ${i === currentAward ? 'bg-amber-500 w-6 h-2.5' : 'w-2.5 h-2.5 bg-zinc-300'}`;
     });
+    if (window.lucide) lucide.createIcons();
+  }
+
+  nav.appendChild(prevBtn);
+  nav.appendChild(dots);
+  nav.appendChild(nextBtn);
+  awardsEl.appendChild(nav);
+}
+
+buildAwardCarousel();
 
     // Testimonials
     document.getElementById('test-title').textContent = s.testimonials.title;
