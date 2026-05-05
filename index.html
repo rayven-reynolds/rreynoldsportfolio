@@ -423,7 +423,7 @@ function buildCarousel() {
 
   s.projects.cards.forEach(card => {
     const slide = document.createElement('div');
-    slide.style.cssText = 'min-width: 50%; box-sizing: border-box; padding: 0 12px;';
+    slide.style.cssText = `min-width: ${window.innerWidth < 768 ? '100%' : '50%'}; box-sizing: border-box; padding: 0 12px;`;
 
     const wrap = document.createElement('div');
     wrap.className = 'rounded-3xl border border-zinc-200 bg-white shadow-soft overflow-hidden';
@@ -488,7 +488,8 @@ function buildCarousel() {
   };
 
   function updateSlide() {
-    slideTrack.style.transform = `translateX(-${currentSlide * 50}%)`;
+    const slidePercent = window.innerWidth < 768 ? 100 : 50;
+slideTrack.style.transform = `translateX(-${currentSlide * slidePercent}%)`;
     prevBtn.disabled = currentSlide === 0;
     nextBtn.disabled = currentSlide === s.projects.cards.length - 1;
     s.projects.cards.forEach((_, i) => {
@@ -524,7 +525,7 @@ function buildAwardCarousel() {
 
   s.awards.items.forEach(a => {
     const slide = document.createElement('div');
-    slide.style.cssText = 'min-width: 50%; box-sizing: border-box; padding: 0 12px;';
+    slide.style.cssText = `min-width: ${window.innerWidth < 768 ? '100%' : '50%'}; box-sizing: border-box; padding: 0 12px;`;
     const card = document.createElement('div');
     card.className = 'rounded-3xl border border-zinc-200 bg-white shadow-soft overflow-hidden h-full';
     card.innerHTML = `
@@ -566,7 +567,8 @@ function buildAwardCarousel() {
   nextBtn.onclick = () => { if (currentAward < s.awards.items.length - 1) { currentAward++; updateAward(); } };
 
   function updateAward() {
-    slideTrack.style.transform = `translateX(-${currentAward * 50}%)`;
+    const slidePercent = window.innerWidth < 768 ? 100 : 50;
+slideTrack.style.transform = `translateX(-${currentSlide * slidePercent}%)`;
     prevBtn.disabled = currentAward === 0;
     nextBtn.disabled = currentAward === s.awards.items.length - 1;
     s.awards.items.forEach((_, i) => {
