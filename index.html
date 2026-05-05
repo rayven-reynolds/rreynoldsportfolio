@@ -491,7 +491,7 @@ function buildCarousel() {
 
   function updateSlide() {
     const slidePercent = window.innerWidth < 768 ? 100 : 50;
-slideTrack.style.transform = `translateX(-${currentSlide * slidePercent}%)`;
+slideTrack.style.transform = `translateX(-${currentAward * slidePercent}%)`;
     prevBtn.disabled = currentSlide === 0;
     nextBtn.disabled = currentSlide === s.projects.cards.length - 1;
     s.projects.cards.forEach((_, i) => {
