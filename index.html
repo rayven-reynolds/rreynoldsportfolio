@@ -136,6 +136,11 @@
   title: "Leadership Awards & Recognition",
   subtitle: "Leadership awards are given to the top 10–15 performers company-wide, nominated by leaders and peers",
   items: [
+  {
+      title: "Be a Learn-It-All, Not a Know-It-All",
+      body: "For two quarters now, Ray has been a relentless learn-it-all, diving into a new space under less than ideal circumstances. Even though she is used to partnering with the GTM team, Ray stepped into a new challenge when she took on the Rate my Rent project and then the Partnerships work within the EPD organization. She asked smart questions, sought out the right context, and built a genuine understanding of a complex and fast-moving environment — all while keeping her projects on track and her stakeholders aligned. She isn't afraid to get into the nitty gritty, even if it means getting into a technical discussion of experiment iterations which is not a particularly exciting topic - Ray will tackle it to make sure she understands what we need to keep the project moving. She approaches unfamiliar territory not with hesitation, but with intellectual curiosity and a bias toward growth. She doesn't pretend to have all the answers — she goes and finds them, and in doing so, raises the bar for herself and the teams around her. That combination of humility and drive is rare, and it's exactly what makes her so effective. We're lucky to have her!",
+      footer: "Nominated by Clare Raczkowski — Q1 2026"
+    },
     {
       title: "Lead with Clarity & Use Speed to Our Advantage",
       body: "Ray has been introduced to the Lea objective early in Q1 and immediately had an incredible positive impact on the team. Her ability to gather context, gracefully introduce herself into existing processes and improve upon them is remarkable. She works diligently to facilitate important discussions, map out milestones needed to hit our goals, holding people accountable and always communicates to ensure everyone is on the same page. Driving clarity is sorely needed in the pace we are trying to move and Ray is a great example of that. Thank you for making us better!",
@@ -527,7 +532,7 @@ function buildAwardCarousel() {
         <i data-lucide="trophy" class="w-4 h-4 text-amber-600"></i>
         <h3 class="font-semibold">${a.title}</h3>
       </div>
-      <div class="p-6 text-zinc-800 italic">${a.body}</div>
+      <div class="p-6 text-zinc-800">&ldquo;${a.body}&rdquo;</div>
       <div class="px-6 pb-6 text-sm text-zinc-500 font-medium">${a.footer}</div>`;
     slide.appendChild(card);
     slideTrack.appendChild(slide);
