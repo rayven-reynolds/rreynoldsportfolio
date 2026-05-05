@@ -284,7 +284,7 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
       </div>
       <p id="projects-sub" class="text-zinc-600 mt-1"></p>
     </div>
-   <div id="project-cards" class="max-w-2xl mx-auto"></div>
+   <div id="project-cards"></div>
   </section>
 
   <!-- ===== Awards ===== -->
@@ -414,11 +414,11 @@ function buildCarousel() {
 
   const slideTrack = document.createElement('div');
   slideTrack.id = 'slide-track';
-  slideTrack.style.cssText = 'display: flex; transition: transform 0.4s ease;';
+ slideTrack.style.cssText = 'display: flex; transition: transform 0.4s ease; margin: 0 -12px;';
 
   s.projects.cards.forEach(card => {
     const slide = document.createElement('div');
-    slide.style.cssText = 'min-width: 100%; box-sizing: border-box;';
+    slide.style.cssText = 'min-width: 50%; box-sizing: border-box; padding: 0 12px;';
 
     const wrap = document.createElement('div');
     wrap.className = 'rounded-3xl border border-zinc-200 bg-white shadow-soft overflow-hidden';
@@ -483,7 +483,7 @@ function buildCarousel() {
   };
 
   function updateSlide() {
-    slideTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    slideTrack.style.transform = `translateX(-${currentSlide * 50}%)`;
     prevBtn.disabled = currentSlide === 0;
     nextBtn.disabled = currentSlide === s.projects.cards.length - 1;
     s.projects.cards.forEach((_, i) => {
