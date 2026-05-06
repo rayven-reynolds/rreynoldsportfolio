@@ -40,7 +40,7 @@
       brand: { name: "Rayven Reynolds, PMP" },
       hero: {
         titleLead: "PMO Leader.",
-        titleAccent: "Bridging Strategy and Execution",
+        titleAccent: "Bridging Strategy and Execution.",
         tagline: "Hi, I'm Ray, a Program Management leader who has built a PMO from the ground up and brings 10+ years of experience taking leadership's biggest, boldest ideas and transforming them into executable plans that come to life even when the path forward isn't so clear.",
         stats: [
           { label: "New Revenue Stream and GTM Selling Motion", value: "$1M+" },
@@ -237,9 +237,9 @@ footer: "© " + new Date().getFullYear() + " Rayven Reynolds, PMP — PMO Leader
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <div>
         <h1 class="text-3xl md:text-5xl font-bold leading-tight">
-          <span id="hero-lead">Program Leader turning</span>
-          <span class="text-violet-600" id="hero-accent">ambiguity into action</span>
-        </h1>
+  <span id="hero-lead"></span><br>
+  <span class="text-violet-600" id="hero-accent"></span>
+</h1>
         <p id="hero-tag" class="mt-4 text-zinc-700 text-lg"></p>
         <div class="mt-6 flex gap-3">
           <a id="cta1" href="#projects"
@@ -432,7 +432,7 @@ function buildCarousel() {
 
     const header = document.createElement('div');
     header.className = `border-b border-zinc-200 p-5 bg-gradient-to-r ${card.gradient} text-white`;
-    header.innerHTML = `<h3 class="text-lg font-semibold flex items-center gap-2"><i data-lucide="${card.icon}" class="w-4 h-4"></i> ${card.title}</h3>`;
+   header.innerHTML = `<h3 class="text-lg font-semibold flex items-center gap-2"><i data-lucide="${card.icon}" class="w-6 h-6"></i> ${card.title}</h3>`;
 
     const body = document.createElement('div');
     body.className = 'p-6 grid gap-4';
